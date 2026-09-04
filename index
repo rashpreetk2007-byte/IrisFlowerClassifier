@@ -1,0 +1,53 @@
+🌸 Iris Flower Classifier
+Machine Learning • Scikit-learn • Flask
+Developed by Rashpreet Kaur Arora
+HomeDetailsHistory 🌙 Dark Mode
+
+🔬 Enter Flower Measurements
+{% if error %}
+{{ error }}
+{% endif %}
+Sepal Length (cm)Recommended: 4.0–8.0
+Sepal Width (cm)Recommended: 2.0–4.5
+Petal Length (cm)Recommended: 1.0–7.0
+Petal Width (cm)Recommended: 0.1–2.5
+🔍 Predict Flower
+Setosa Versicolor Virginica
+{% if prediction %}
+
+🌺 Prediction Result
+{{ prediction }}
+Confidence: {{ confidence }}%
+{{ details.scientific }} — {{ details.common_name }}
+
+Class Probabilities
+{% for name,prob in probabilities.items() %}
+
+{{ name }}{{ prob }}%
+{% endfor %}
+🖨 Print⬇ Download
+{% else %}
+🌸 Prediction Result
+Enter the four measurements and click Predict Flower.
+The model predicts from measurements. The displayed image changes according to the predicted class.
+{% endif %}
+{% if details %}
+📚 Flower Details
+{% for title,value in [ ("Scientific Name",details.scientific),("Family",details.family),("Genus",details.genus), ("Species",details.species),("Color",details.color),("Shape",details.shape), ("Sepal",details.sepal),("Petal",details.petal),("Habitat",details.habitat), ("Distribution",details.distribution),("Class",details.class_name),("Common Name",details.common_name)] %}
+
+{{ title }}
+{{ value }}
+{% endfor %}
+
+Description
+{{ details.description }}
+{% endif %}
+🕘 Prediction History
+No predictions stored in this browser yet.
+⚙ How It Works
+1. Enter Sepal Length, Sepal Width, Petal Length and Petal Width.
+2. Flask sends the values to the trained Scikit-learn model.
+3. The model predicts Setosa, Versicolor or Virginica.
+4. The website displays confidence, probability bars, flower image and details.
+© 2026 Iris Flower Classifier
+Developed by Rashpreet Kaur Arora
